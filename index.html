@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cocoablogs.com — Premium Domain For Sale</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1410;
+    --muted: #6B6560;
+    --accent: #C4873A;
+    --accent-light: #F0DEC4;
+    --border: rgba(26,20,16,0.12);
+    --white: #FDFCFA;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRID LINES */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* HEADER */
+  header {
+    padding: 48px 0 0;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+
+  .badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--white);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  .domain-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .domain-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 520px;
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+
+  /* METRICS STRIP */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    overflow: hidden;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .metric {
+    padding: 24px 20px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .metric:last-child { border-right: none; }
+
+  .metric-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  /* BACKLINKS TABLE */
+  .backlinks {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .bl-header {
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 80px;
+    gap: 0;
+    padding: 10px 20px;
+    background: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .bl-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 80px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    transition: background 0.15s;
+  }
+
+  .bl-row:last-child { border-bottom: none; }
+  .bl-row:hover { background: var(--accent-light); }
+
+  .bl-site { font-size: 14px; font-weight: 400; }
+  .bl-site span { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .bl-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .tag-follow {
+    display: inline-block;
+    background: #E8F5E9;
+    color: #2E7D32;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    padding: 3px 7px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* USE CASES */
+  .use-cases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .use-case {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .use-case:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .use-case-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .use-case h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .use-case p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--ink);
+    color: var(--white);
+    padding: 48px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .cta-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .cta-note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 32px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    border-radius: 2px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .cta-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  .cta-sub {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 0 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  @media (max-width: 600px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .bl-header, .bl-row { grid-template-columns: 1fr 60px 60px; }
+    .bl-header > *:nth-child(4), .bl-row > *:nth-child(4) { display: none; }
+    .use-cases { grid-template-columns: 1fr; }
+    .cta-section { padding: 32px 24px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="badge">Domain For Sale</div>
+    <h1 class="domain-name">cocoa<em>blogs</em>.com</h1>
+    <p class="tagline">An aged domain with rare editorial backlinks from the Apple/Mac ecosystem. A head start no amount of money can easily buy.</p>
+  </header>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-val">DR 9</div>
+      <div class="metric-label">Domain Rating</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">TF 12</div>
+      <div class="metric-label">Trust Flow</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">94%</div>
+      <div class="metric-label">Dofollow Links</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">580</div>
+      <div class="metric-label">Indexed URLs</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-tag">Backlink Profile</div>
+    <h2>Real editorial links.<br>Zero spam.</h2>
+    <p style="color:var(--muted);margin-bottom:20px;max-width:560px;">Every backlink pointing to this domain is genuinely earned — editorial mentions from real publications. The kind that take years to build organically.</p>
+
+    <div class="backlinks">
+      <div class="bl-header">
+        <div>Source</div>
+        <div style="text-align:center">DR</div>
+        <div style="text-align:center">Type</div>
+        <div style="text-align:center">Link</div>
+      </div>
+      <div class="bl-row">
+        <div class="bl-site">
+          Daring Fireball
+          <span>daringfireball.net — Apple's most influential blog</span>
+        </div>
+        <div class="bl-num">88</div>
+        <div style="text-align:center"><span class="tag-follow">dofollow</span></div>
+        <div class="bl-num">✓</div>
+      </div>
+      <div class="bl-row">
+        <div class="bl-site">
+          inessential.com
+          <span>Brent Simmons — legendary Mac/iOS developer blog</span>
+        </div>
+        <div class="bl-num">67</div>
+        <div style="text-align:center"><span class="tag-follow">dofollow</span></div>
+        <div class="bl-num">✓</div>
+      </div>
+      <div class="bl-row">
+        <div class="bl-site">
+          + Additional linking domains
+          <span>All genuine, editorial, Apple/Mac ecosystem</span>
+        </div>
+        <div class="bl-num">—</div>
+        <div style="text-align:center"><span class="tag-follow">dofollow</span></div>
+        <div class="bl-num">✓</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="animation-delay:0.6s">
+    <div class="section-tag">Ideal For</div>
+    <h2>Built for the Apple ecosystem.</h2>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="use-case-icon">🍎</div>
+        <h3>Apple / Mac Developer Blog</h3>
+        <p>Cocoa is Apple's native framework. The domain name is a perfect fit for a developer writing about macOS, iOS, or SwiftUI.</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">📱</div>
+        <h3>Indie iOS Developer</h3>
+        <p>Launch your developer presence with instant authority from links that the Apple community already trusts.</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">✍️</div>
+        <h3>Tech Editorial / Newsletter</h3>
+        <p>A respected name in a niche where Daring Fireball sets the tone. Inherit that credibility from day one.</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">🔗</div>
+        <h3>SEO Asset / Portfolio</h3>
+        <p>Rare dofollow links from DR 88 and DR 67 sources make this a valuable addition to any link-building portfolio.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-price">$500</div>
+    <div class="cta-note">Buy It Now · Offers from $250 considered</div>
+    <a href="https://flippa.com" class="cta-btn">View on Flippa →</a>
+    <p class="cta-sub">Secure transfer via Flippa escrow · Namecheap registrar · Immediate delivery</p>
+  </div>
+
+  <footer>
+    <span>cocoablogs.com</span>
+    <span>Listed on Flippa</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
